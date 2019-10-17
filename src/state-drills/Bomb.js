@@ -26,17 +26,16 @@ class Bomb extends React.Component {
   render() {
     let count;
     
-    if(this.state.count % 2 === 0){
+    if (this.state.count % 2 === 0) {
       count = <p>tick</p>;
-    }
-
-    if (this.state.count % 2 !== 0) {
+    } else if (this.state.count >= 8) {
+      clearInterval(this.interval);
+      count = <p>BOOM!!!!</p>
+    } else {
       count = <p>tock</p>;
     }
 
-    if (this.state.count >= 8) {
-      count = <p>BOOM!!!!</p>
-    }
+   
     return (
       <div>
         {count}
