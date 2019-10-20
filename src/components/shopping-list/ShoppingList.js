@@ -6,7 +6,7 @@ function ShoppingList(props) {
     <ul>
       {props.items.map((item, i) => 
         <ShoppingItem
-          key={key}
+          key={i}
           item={item}
         />  
       )}
@@ -14,7 +14,7 @@ function ShoppingList(props) {
   )
 }
 
-ShoppingList.defaultPropt = {
+ShoppingList.defaultProps = {
   items: []
 }
 
